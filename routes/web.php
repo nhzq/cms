@@ -24,3 +24,8 @@ Route::get('/post/create', [
 	'uses' => 'PostsController@create',
 	'as' => 'admin.post.create'
 ]);
+
+Route::post('/post/store', [
+	'uses' => 'PostsController@store',
+	'as' => 'admin.post.store'
+]);
