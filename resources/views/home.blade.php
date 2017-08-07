@@ -2,6 +2,7 @@
 
 @section('content')
 
+	<div class="col-lg-8">
         <div class="panel panel-default">
             <div class="panel-heading">Dashboard</div>
 
@@ -9,5 +10,6 @@
                 You are logged in!
             </div>
         </div>
+    </div>
 
 @endsection

@@ -80,19 +80,24 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-lg-4">
-                    <div class="list-group">
-                        <li class="list-group-item">
-                            <a href="{{ url('/home') }}">Home</a>
-                        </li>
-                        <li class="list-group-item">
-                            <a href="{{ url('/post/create') }}">Create new post</a>
-                        </li>
+
+                @if(Auth::check())
+
+                    <div class="col-lg-4">
+                        <div class="list-group">
+                            <li class="list-group-item">
+                                <a href="{{ url('home') }}">Home</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('admin.post.create') }}">Create new post</a>
+                            </li>
+                        </div>
                     </div>
-                </div>
-                <div class="col-lg-8">
-                    @yield('content')
-                </div>
+
+                @endif
+
+                @yield('content')
+                
             </div>
         </div>
 
@@ -100,6 +105,6 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>
