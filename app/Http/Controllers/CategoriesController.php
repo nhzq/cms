@@ -45,10 +45,7 @@ class CategoriesController extends Controller
         $category->name = $request->name;
         $category->save();
 
-        return redirect()->back();
-
-
-
+        return redirect()->route('category.index');
     }
 
     /**
@@ -70,7 +67,9 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+
+        return view('admin.categories.edit')->with('category', $category);
     }
 
     /**
@@ -82,7 +81,12 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categories = Category::find($id);
+
+        $categories->name = $request->name;
+        $categories->save();
+
+        return redirect()->route('category.index')
     }
 
     /**
@@ -93,6 +97,10 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categories = Category::find($id);
+
+        $categories->delete();
+
+        return redirect()->route('category.index');
     }
 }
