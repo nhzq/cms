@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" rel="stylesheet">
 
     <!-- Scripts -->
     <script>
@@ -112,5 +113,16 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.js"></script>
+
+    <script>
+        
+        @if(Session::has('success'))
+
+            toastr.success("{{ Session::get('success') }}");
+
+        @endif
+
+    </script>
 </body>
 </html>
