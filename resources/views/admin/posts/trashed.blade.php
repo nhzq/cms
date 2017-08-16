@@ -10,7 +10,8 @@
 							<th>Image</th>
 							<th>Title</th>
 							<th>Edit</th>
-                            <th>Delete</th>
+                            <th>Restore</th>
+                            <th>Destroy</th>
 						</thead>
 						<tbody>		
 
@@ -21,7 +22,7 @@
                                     <td>{{ $post->title }}</td>
                                     <td>Edit</td>
                                     <td>
-										<a href="{{ route('admin.post.delete', [id => $post->id]) }}" class="btn btn-danger">Delete</a>
+										<a href="" class="btn btn-danger">Trash</a>
 									</td>
                                 </tr>
 

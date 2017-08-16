@@ -46,7 +46,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 		'uses' => 'PostsController@destroy',
 		'as' => 'admin.post.delete'
 	]);
+
+	Route::get('/post/trashed', [
+		'uses' => 'PostsController@trashed',
+		'as' => 'admin.post.trashed'
+	]);
 	//End post
+
 
 
 	//Start categories
