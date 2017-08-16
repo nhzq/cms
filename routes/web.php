@@ -41,6 +41,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 		'uses' => 'PostsController@store',
 		'as' => 'admin.post.store'
 	]);
+
+	Route::get('/post/delete/{id}', [
+		'uses' => 'PostsController@destroy',
+		'as' => 'admin.post.delete'
+	]);
 	//End post
 
 
