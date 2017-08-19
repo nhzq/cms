@@ -4,6 +4,9 @@
 	
 		<div class="col-lg-8">
 			<div class="panel panel-default">
+				<div class="panel-heading">
+                    All posts
+                </div>
 				<div class="panel-body">
 					<table class="table table-power">
 						<thead>

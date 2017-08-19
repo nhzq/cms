@@ -93,6 +93,9 @@
                                 <a href="{{ route('category.index') }}">Category List</a>
                             </li>
                             <li class="list-group-item">
+                                <a href="{{ route('tag.index') }}">Tag List</a>
+                            </li>
+                            <li class="list-group-item">
                                 <a href="{{ route('admin.post.index') }}">All Posts</a>
                             </li>
                             <li class="list-group-item">
@@ -103,6 +106,9 @@
                             </li>
                             <li class="list-group-item">
                                 <a href="{{ route('admin.post.create') }}">Create new post</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('tag.create') }}">Create new tag</a>
                             </li>
                         </div>
                     </div>

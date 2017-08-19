@@ -4,33 +4,33 @@
 	
 		<div class="col-lg-8">
 			<div class="panel panel-default">
-				<div class="panel-heading">
-                    Categories list
+                <div class="panel-heading">
+                    Tags list
                 </div>
 				<div class="panel-body">
 					<table class="table table-power">
 						<thead>
-							<th>Category name</th>
+							<th>Tag name</th>
 							<th>Editing</th>
 							<th>Deleting</th>
 						</thead>
 						<tbody>
 
-							@if ($categories->count() > 0)
+							@if ($tags->count() > 0)
 
-								@foreach($categories as $category)
+								@foreach($tags as $tag)
 
 									<tr>
 										<td>
-											{{ $category->name }}
+											{{ $tag->tag }}
 										</td>
 										<td>
-											<a href="{{ route('category.edit', ['id' => $category->id]) }}" class="btn btn-xs btn-info">
+											<a href="{{ route('tag.edit', ['id' => $tag->id]) }}" class="btn btn-xs btn-info">
 												Edit
 											</a>
 										</td>
 										<td>
-											<a href="{{ route('category.delete', ['id' => $category->id]) }}" class="btn btn-xs btn-danger">
+											<a href="{{ route('tag.delete', ['id' => $tag->id]) }}" class="btn btn-xs btn-danger">
 												Delete
 											</a>
 										</td>
@@ -41,7 +41,7 @@
 							@else
 
 								<tr>
-									<th colspan="5" class="text-center">No category</th>
+									<th colspan="5" class="text-center">No tags created</th>
 								</tr>
 
 							@endif
