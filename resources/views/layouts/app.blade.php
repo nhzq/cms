@@ -90,10 +90,13 @@
                                 <a href="{{ route('home') }}">Home</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('category.index') }}">Category List</a>
+                                <a href="{{ route('category.index') }}">Categories List</a>
                             </li>
                             <li class="list-group-item">
-                                <a href="{{ route('tag.index') }}">Tag List</a>
+                                <a href="{{ route('tag.index') }}">Tags List</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('user.index') }}">Users List</a>
                             </li>
                             <li class="list-group-item">
                                 <a href="{{ route('admin.post.index') }}">All Posts</a>
@@ -109,6 +112,9 @@
                             </li>
                             <li class="list-group-item">
                                 <a href="{{ route('tag.create') }}">Create new tag</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="{{ route('user.create') }}">Create new user</a>
                             </li>
                         </div>
                     </div>
