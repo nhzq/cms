@@ -11,10 +11,19 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        App\User::create([
+        $user = App\User::create([
             'name' => 'Admin',
             'email' => 'admin@neophia.com',
-            'password' => bcrypt('password')
+            'password' => bcrypt('password'),
+            'admin' => 1
+        ]);
+
+        App\Profile::create([
+            'user_id' => $user->id,
+            'avatar' => 'uploads/avatar/1.png',
+            'about' => 'lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor lorem ipsum dolor',
+            'facebook' => 'facebook.com',
+            'youtube' => 'youtube'
         ]);
     }
 }
