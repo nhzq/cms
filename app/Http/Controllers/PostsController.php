@@ -101,7 +101,8 @@ class PostsController extends Controller
         
         return view('admin.posts.edit')
             ->with('post', $post)
-            ->with('categories', Category::all());
+            ->with('categories', Category::all())
+            ->with('tags', Tag::all());
     }
 
     /**
@@ -119,6 +120,7 @@ class PostsController extends Controller
             'title' => 'required',
             'category_id' => 'required',
             'content' => 'required'
+
         ]);
 
         if ($request->hasFile('featured'))
@@ -134,7 +136,9 @@ class PostsController extends Controller
         $post->content = $request->content;
         $post->save();
 
-        Session::flash('success', 'Your post hass been updated');
+        $post->tags()->sync($request->tags);
+
+        Session::flash('success', 'Your post has been updated');
 
         return redirect()->route('admin.post.index');
 

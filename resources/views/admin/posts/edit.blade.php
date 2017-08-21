@@ -30,11 +30,44 @@
 								
 								@foreach($categories as $category)
 									
-									<option value="{{ $category->id }}">{{ $category->name }}</option>
+									<option value="{{ $category->id }}"
+
+										@if ($post->category->id == $category->id)
+
+											selected
+
+										@endif
+
+									>{{ $category->name }}</option>
 
 								@endforeach
 							
 							</select>
+						</div>
+						<div class="form-group">
+
+							@foreach($tags as $tag)
+
+								<div class="checkbox">
+									<label for="tags">
+										<input type="checkbox" name="tags[]" value="{{ $tag->id }}" 
+										
+											@foreach ($post->tags as $tagshow)
+
+												@if ($tag->id == $tagshow->id)
+
+													checked
+
+												@endif
+
+											@endforeach
+
+										> {{ $tag->tag }}
+									</label>
+								</div>
+
+							@endforeach
+							
 						</div>
 						<div class="form-group">
 							<label for="content">Content</label>
