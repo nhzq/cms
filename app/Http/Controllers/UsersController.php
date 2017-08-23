@@ -9,6 +9,10 @@ use Session;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -49,7 +53,8 @@ class UsersController extends Controller
         ]);
 
         $profile = Profile::create([
-            'user_id' => $user->id
+            'user_id' => $user->id,
+            'avatar' => 'uploads/avatar/1.png'
         ]);
 
         Session::flash('success', 'User has been added');
@@ -121,6 +126,6 @@ class UsersController extends Controller
 
         Session::flash('success', 'Permission has been changed');
 
-        return redirect()->back();
+        return redirect()->route('home');
     }
 }

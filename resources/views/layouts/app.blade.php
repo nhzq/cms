@@ -95,9 +95,15 @@
                             <li class="list-group-item">
                                 <a href="{{ route('tag.index') }}">Tags List</a>
                             </li>
-                            <li class="list-group-item">
-                                <a href="{{ route('user.index') }}">Users List</a>
-                            </li>
+
+                            @if (Auth::user()->admin)
+
+                                <li class="list-group-item">
+                                    <a href="{{ route('user.index') }}">Users List</a>
+                                </li>
+
+                            @endif
+
                             <li class="list-group-item">
                                 <a href="{{ route('admin.post.index') }}">All Posts</a>
                             </li>
@@ -113,9 +119,15 @@
                             <li class="list-group-item">
                                 <a href="{{ route('tag.create') }}">Create new tag</a>
                             </li>
-                            <li class="list-group-item">
-                                <a href="{{ route('user.create') }}">Create new user</a>
-                            </li>
+
+                            @if (Auth::user()->admin)
+
+                                <li class="list-group-item">
+                                    <a href="{{ route('user.create') }}">Create new user</a>
+                                </li>
+
+                            @endif
+
                         </div>
                     </div>
 
