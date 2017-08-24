@@ -128,6 +128,10 @@
 
                             @endif
 
+                            <li class="list-group-item">
+                                <a href="{{ route('user.profile.index') }}">My Profile</a>
+                            </li>
+
                         </div>
                     </div>
 
