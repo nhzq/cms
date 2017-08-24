@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.3/toastr.min.css" rel="stylesheet">
+    @yield('styles')
 
     <!-- Scripts -->
     <script>
@@ -164,5 +165,7 @@
         @endif
 
     </script>
+
+    @yield('scripts')
 </body>
 </html>
