@@ -145,7 +145,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	//End tag
 
 
-	//Start tag
+	//Start user
 	Route::get('/user', [
 		'uses' => 'UsersController@index',
 		'as' => 'user.index'
@@ -185,6 +185,17 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 		'uses' => 'UsersController@destroy',
 		'as' => 'user.delete'
 	]);
+	//End user
 
+
+	Route::get('/setting/index', [
+		'uses' => 'SettingsController@index',
+		'as' => 'setting.index'
+	]);
+
+	Route::post('/setting/update', [
+		'uses' => 'SettingsController@update',
+		'as' => 'setting.update'
+	]);
 });
 

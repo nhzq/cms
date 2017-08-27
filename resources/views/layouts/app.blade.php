@@ -133,6 +133,14 @@
                                 <a href="{{ route('user.profile.index') }}">My Profile</a>
                             </li>
 
+                            @if (Auth::user()->admin)
+
+                                <li class="list-group-item">
+                                    <a href="{{ route('setting.index') }}">Setting</a>
+                                </li>
+
+                            @endif
+
                         </div>
                     </div>
 
