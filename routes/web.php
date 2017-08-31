@@ -12,7 +12,7 @@
 */
 
 Route::get('/test', function() {
-	return App\User::find(1)->profile;
+	return App\Category::find(1)->posts()->take(3)->get();
 });
 
 Route::get('/', [
@@ -188,7 +188,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 	]);
 	//End user
 
-
+	
+	//Start setting
 	Route::get('/setting/index', [
 		'uses' => 'SettingsController@index',
 		'as' => 'setting.index'
@@ -198,5 +199,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 		'uses' => 'SettingsController@update',
 		'as' => 'setting.update'
 	]);
+	//End setting
 });
 
