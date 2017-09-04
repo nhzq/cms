@@ -12,12 +12,17 @@
 */
 
 Route::get('/test', function() {
-	return App\Category::find(1)->posts()->take(3)->get();
+	return App\Post::find(5)->tags;
 });
 
 Route::get('/', [
 	'uses' => 'FrontEndController@index',
 	'as' => 'index'
+]);
+
+Route::get('/{slug}', [
+	'uses' => 'FrontEndController@singlePost',
+	'as' => 'post.single'
 ]);
 
 
