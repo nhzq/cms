@@ -3,7 +3,7 @@
             <div class="header-content-wrapper">
                 <div class="logo">
                     <div class="logo-text">
-                        <div class="logo-title">{{ $title }}</div>
+                        <a href="{{ route('index') }}"><div class="logo-title">{{ $title }}</div></a>
                     </div>
                 </div>
 
@@ -22,7 +22,7 @@
                         @foreach ($categories as $category)
 
                             <li>
-                                <a href="">{{ strtoupper($category->name) }}</a>
+                                <a href="{{ route('category.single', ['id' => $category->id]) }}">{{ strtoupper($category->name) }}</a>
                             </li>
 
                         @endforeach

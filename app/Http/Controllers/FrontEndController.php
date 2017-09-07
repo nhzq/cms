@@ -124,4 +124,17 @@ class FrontEndController extends Controller
             ->with('categories', Category::take(4)->get());
 
     }
+
+    public function tag($id)
+    {
+        $tag = Tag::find($id);
+
+        return view('tag')
+            ->with('tag', $tag)
+            ->with('setting', Setting::first())
+            ->with('categories', Category::take(4)->get())
+            ->with('title', Setting::first()->site_name);
+
+            
+    }
 }
