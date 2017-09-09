@@ -90,6 +90,7 @@ class ProfileController extends Controller
 
         $user->name = $request->name;
         $user->email = $request->email;
+        $user->about = $request->about;
         $user->profile->facebook = $request->facebook;
         $user->profile->youtube = $request->youtube;
 
