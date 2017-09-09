@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/test', function() {
-	return App\Category::find(4)->posts;
-});
+Route::get('/test', [
+	'uses' => 'FrontEndController@search',
+	'as' => 'test.page'
+]);
 
 Route::get('/', [
 	'uses' => 'FrontEndController@index',
@@ -33,6 +34,11 @@ Route::get('/category/{id}', [
 Route::get('/tag/{id}', [
 	'uses' => 'FrontEndController@tag',
 	'as' => 'tag.single'
+]);
+
+Route::get('/results', [
+	'uses' => 'FrontEndController@search',
+	'as' => 'result.single'
 ]);
 
 

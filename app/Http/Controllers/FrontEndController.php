@@ -137,4 +137,19 @@ class FrontEndController extends Controller
 
             
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        
+        $posts = Post::where('title', 'LIKE', '%' . $search . '%')->get();
+            
+        
+        return view('results')
+            ->with('search', $search)
+            ->with('posts', $posts)
+            ->with('categories', Category::take(4)->get())
+            ->with('setting', Setting::first())
+            ->with('title', Setting::first()->site_name);
+    }
 }
